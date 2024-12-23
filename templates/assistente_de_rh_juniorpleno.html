@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ cargo }}</h1>
+
+<h2>Organograma</h2>
+<p>{{ content.organograma }}</p>
+
+<h2>Missão</h2>
+<p>{{ content.missao }}</p>
+
+<h2>Experiência</h2>
+<p>{{ content.experiencia }}</p>
+
+<h2>Atividades</h2>
+<ul>
+    {% for atividade in content.atividades.split('\n') %}
+        <li>{{ atividade }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Formação</h2>
+<ul>
+    {% for formacao in content.formacao.split('\n') %}
+        <li>{{ formacao }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Competências</h2>
+<ul>
+    {% for competencia in content.competencias.split('\n') %}
+        <li>{{ competencia }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
